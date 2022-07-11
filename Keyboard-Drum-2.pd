@@ -1,9 +1,9 @@
-#N canvas 0 22 1920 1036 10;
-#X obj 83 104 bng 50 250 50 0 kick-s kick-r empty 17 7 0 10 #ff8300
+#N canvas 0 22 555 421 10;
+#X obj 91 150 bng 50 250 50 0 kick-s kick-r empty 17 7 0 10 #ff8300
 #000000 #000000;
-#X obj 133 104 bng 50 250 50 0 snare-s snare-r empty 17 7 0 10 #faff00
+#X obj 141 150 bng 50 250 50 0 snare-s snare-r empty 17 7 0 10 #faff00
 #000000 #000000;
-#X obj 183 104 bng 50 250 50 0 hihat-s hihat-r empty 17 7 0 10 #00faff
+#X obj 191 150 bng 50 250 50 0 hihat-s hihat-r empty 17 7 0 10 #00faff
 #000000 #000000;
 #N canvas 278 326 1604 732 guts 0;
 #X obj 208 270 key;
@@ -162,7 +162,7 @@
 #X connect 74 0 73 0;
 #X connect 75 0 72 0;
 #X connect 75 1 74 0;
-#X restore 281 569 pd guts;
-#X obj 75 172 tgl 50 0 tgl-s tgl-r empty 17 7 0 10 #000000 #000000
+#X restore 88 360 pd guts;
+#X obj 83 218 tgl 50 0 tgl-s tgl-r empty 17 7 0 10 #000000 #000000
 #000000 0 1;
-#X coords 0 1036 1 1035 515 300 0;
+#X coords 0 421 1 420 515 300 0;
