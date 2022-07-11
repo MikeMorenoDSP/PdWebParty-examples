@@ -1,23 +1,23 @@
 #N canvas 0 22 1920 1036 10;
-#X obj 143 132 bng 20 250 50 0 \$0-kick-s \$0-kick-r empty 17 7 0 10
-#ff8300 #000000 #000000;
-#X obj 193 132 bng 20 250 50 0 \$0-snare-s \$0-snare-r empty 17 7 0
-10 #faff00 #000000 #000000;
-#X obj 243 132 bng 20 250 50 0 \$0-hihat-s \$0-hihat-r empty 17 7 0
-10 #00faff #000000 #000000;
-#N canvas 278 326 1604 732 guts 1;
+#X obj 83 104 bng 50 250 50 0 kick-s kick-r empty 17 7 0 10 #ff8300
+#000000 #000000;
+#X obj 133 104 bng 50 250 50 0 snare-s snare-r empty 17 7 0 10 #faff00
+#000000 #000000;
+#X obj 183 104 bng 50 250 50 0 hihat-s hihat-r empty 17 7 0 10 #00faff
+#000000 #000000;
+#N canvas 278 326 1604 732 guts 0;
 #X obj 208 270 key;
 #X floatatom 208 291 5 0 0 0 - - - 0;
 #X obj 208 311 sel 97;
-#X obj 208 332 send \$0-kick-r;
-#X obj 208 412 r \$0-kick-s;
+#X obj 208 332 send kick-r;
+#X obj 208 412 r kick-s;
 #X obj 208 454 line~;
 #X obj 208 475 sqrt~;
 #X obj 208 517 -~ 0.25;
 #X obj 208 538 cos~;
 #X obj 208 559 lop~ 1000;
-#X obj 208 580 throw~ \$0-output;
-#X obj 1067 529 catch~ \$0-output;
+#X obj 208 580 throw~ output;
+#X obj 1067 529 catch~ output;
 #X obj 1067 571 clip~ -1 1;
 #X obj 1137 592 pow~ 3;
 #X obj 1137 613 /~ 3;
@@ -31,16 +31,16 @@
 #X obj 318 270 key;
 #X floatatom 318 291 5 0 0 0 - - - 0;
 #X obj 318 311 sel 115;
-#X obj 318 332 send \$0-snare-r;
-#X obj 348 412 r \$0-snare-s;
+#X obj 318 332 send snare-r;
+#X obj 348 412 r snare-s;
 #X obj 348 475 *~;
 #X obj 348 566 *~;
 #X obj 348 587 +~;
 #X obj 348 608 clip~ -1 1;
 #X obj 348 629 lop~ 4000;
-#X obj 348 650 throw~ \$0-output;
+#X obj 348 650 throw~ output;
 #X obj 448 524 line~;
-#X obj 448 482 r \$0-snare-s;
+#X obj 448 482 r snare-s;
 #X obj 448 545 *~;
 #X msg 448 503 1 \, 0 200;
 #X obj 448 566 *~;
@@ -57,8 +57,8 @@
 #X obj 428 270 key;
 #X floatatom 428 291 5 0 0 0 - - - 0;
 #X obj 428 311 sel 100;
-#X obj 428 332 send \$0-hihat-r;
-#X obj 816 586 r \$0-hihat-r;
+#X obj 428 332 send hihat-r;
+#X obj 816 586 r hihat-r;
 #X obj 738 433 phasor~ 341;
 #X obj 658 454 rzero~ 1;
 #X msg 816 607 1 \, 0 100;
@@ -74,11 +74,11 @@
 #X obj 784 484 noise~;
 #X obj 784 505 hip~ 8000;
 #X obj 775 527 *~ 0.5;
-#X obj 658 697 throw~ \$0-output;
+#X obj 658 697 throw~ output;
 #X obj 658 676 *~ 1;
-#X obj 544 102 r \$0-tgl-s;
+#X obj 544 102 r tgl-s;
 #X msg 544 144 color \$1 \$1;
-#X obj 544 165 s \$0-tgl-r;
+#X obj 544 165 s tgl-r;
 #X obj 544 123 * 17;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
@@ -155,6 +155,6 @@
 #X connect 71 0 72 0;
 #X connect 73 0 71 0;
 #X restore 281 569 pd guts;
-#X obj 134 185 tgl 50 0 \$0-tgl-s \$0-tgl-r empty 17 7 0 10 #fcfcfc
-#fcfcfc #000000 0 1;
+#X obj 75 172 tgl 50 0 tgl-s tgl-r empty 17 7 0 10 #fcfcfc #fcfcfc
+#000000 0 1;
 #X coords 0 1036 1 1035 515 300 0;
